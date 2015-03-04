@@ -52,3 +52,21 @@ docs/_build/
 
 # PyBuilder
 target/
+
+
+# Other files
+._*
+*~
+*.pyc
+ve
+reports/
+media/CACHE
+.project
+.pydevproject
+.settings
+local_settings.py
+uploads
+.coverage
+node_modules/
+.DS_Store
+media/.DS_Store
