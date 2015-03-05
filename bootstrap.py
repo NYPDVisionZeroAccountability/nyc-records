@@ -39,7 +39,7 @@ ret = subprocess.call(
     [os.path.join(vedir, 'bin', 'pip'), "install",
      "--use-wheel",
      "--no-deps",
-     "--index-url=https://pypi.python.org/pypi/",
+     #"--index-url=https://pypi.python.org/pypi/",
      "--requirement", os.path.join(pwd, "requirements.txt")])
 
 if ret:
