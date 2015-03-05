@@ -8,17 +8,13 @@ import shutil
 
 pwd = os.path.abspath(os.path.dirname(__file__))
 vedir = os.path.abspath(os.path.join(pwd, "ve"))
-print pwd
-print vedir
+
 if os.path.exists(vedir):
     shutil.rmtree(vedir)
 
 virtualenv_support_dir = os.path.abspath(
     os.path.join(
         pwd, "requirements", "virtualenv_support"))
-
-
-print virtualenv_support_dir
 
 ret = subprocess.call(["python", "virtualenv.py",
                        "--extra-search-dir=%s" % virtualenv_support_dir,
