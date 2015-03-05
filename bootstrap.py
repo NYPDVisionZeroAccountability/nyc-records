@@ -25,7 +25,7 @@ if ret:
 
 ret = subprocess.call(
     [os.path.join(vedir, 'bin', 'pip'), "install",
-     "--index-url=https://pypi.python.org/pypi/",
+     #"--index-url=https://pypi.python.org/pypi/",
      "wheel==0.24.0"])
 
 if ret:
