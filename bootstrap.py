@@ -8,13 +8,17 @@ import shutil
 
 pwd = os.path.abspath(os.path.dirname(__file__))
 vedir = os.path.abspath(os.path.join(pwd, "ve"))
-
+print pwd
+print vedir
 if os.path.exists(vedir):
     shutil.rmtree(vedir)
 
 virtualenv_support_dir = os.path.abspath(
     os.path.join(
         pwd, "requirements", "virtualenv_support"))
+
+
+print virtualenv_support_dir
 
 ret = subprocess.call(["python", "virtualenv.py",
                        "--extra-search-dir=%s" % virtualenv_support_dir,
@@ -25,7 +29,7 @@ if ret:
 
 ret = subprocess.call(
     [os.path.join(vedir, 'bin', 'pip'), "install",
-     "--index-url=https://pypi.python.org/",
+     "--index-url=https://pypi.python.org/pypi/",
      "wheel==0.24.0"])
 
 if ret:
@@ -35,7 +39,7 @@ ret = subprocess.call(
     [os.path.join(vedir, 'bin', 'pip'), "install",
      "--use-wheel",
      "--no-deps",
-     "--index-url=https://pypi.python.org/",
+     "--index-url=https://pypi.python.org/pypi/",
      "--requirement", os.path.join(pwd, "requirements.txt")])
 
 if ret:
